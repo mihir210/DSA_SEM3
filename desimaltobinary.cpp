@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-   stack<int> st;
+   stack<char> st;
    int  n;
    int a = n;
    int i;
@@ -18,6 +18,23 @@ int main()
    while(n>=i)
    {
       int k  = n%i;
+      if (k>9)
+      {
+         int j;
+         for ( j = 10; j <= i; j++)
+         {
+            if (k==j)
+            {
+               break;
+            }
+            
+         }
+         
+         
+      }
+      
+      
+      
       st.push(k);
       n = n/i;
    }

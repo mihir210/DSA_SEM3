@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-# DSA_3
-=======
+
 # DSA_3
 
+In this repository all the dsa concept like liner and non liner data structure are covered.
 
-  in this repo program about stack queue and polynomial
->>>>>>> 1486726aa5d6e76f2a574aa75829147390e19edc
-# DSA_SEM3
+linklist, array adt, stack, doubly linklist, stack using linklist, liner queue , polynomial solve, polynomial add and multiplication, decimal to any base convert 

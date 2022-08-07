@@ -14,37 +14,38 @@ int main()
 
    cout<<"Enter the base you want to convert";
    cin>>i;
+   
 
    while(n>=i)
    {
       int k  = n%i;
       if (k>9)
       {
-         int j;
-         for ( j = 10; j <= i; j++)
-         {
-            if (k==j)
-            {
-               break;
-            }
-            
-         }
-         
+         char c = k -10 +  'A'; 
+         st.push(c);
          
       }
+      else{
+         char c = k + '0';
+         st.push(c);
+      }
       
-      
-      
-      st.push(k);
       n = n/i;
    }
 
    st.push(n);
 
-
    while (!st.empty())
    {
-      cout<<st.top();
+      char ch = st.top();
+      if (int(ch) > 9)
+      {
+         cout<<(ch-'0');
+      }
+      else{
+         cout<<(ch-'A');
+      }
+      
       st.pop();
    }
    

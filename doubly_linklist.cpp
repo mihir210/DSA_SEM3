@@ -74,8 +74,53 @@ public:
       t->next = n;
       
    }
+   
+   
+   void insertBefore(int a , int b){
+      node *n  = new node(a);
+      node *t  = first;
+      
+      while (t->data!=b)
+      {
+         t = t->next;
+      }
+      
+      n->pre = t->pre;
+      
+      n->next = t;
+      t->pre->next = n;
+      t->pre = n; 
+   }
 
 
+   void deleteAfter(int a){
+      node *t = first;
+      
+      while (t->data!=a)
+      {
+         t = t->next;
+      }
+      
+      t->next->next->pre  = t;
+      t->next = t->next->next;
+   }
+   
+   
+   void deleteBefore(int a){
+      node *t  = first;
+      
+      while (t->data!=a)
+      {
+         t = t->next;
+      }
+      
+      t->pre->pre->next = t;
+      t->pre = t->pre->pre;
+      
+   }
+   
+   
+   
    void display(){
       node *t = first;
 
@@ -103,6 +148,7 @@ int main()
    l1.insert(7);
    l1.insert(8);
    l1.insertAfter(1000, 4);
+   l1.insertBefore(200, 4);
    
 
    l1.display();

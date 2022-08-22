@@ -27,13 +27,13 @@ public:
       }
       
    }
-
-
+   
+   
    int pop(){
       if (t<0)
       {
          cout<<"stack is empty";
-         // return;
+         return 0;
       }
       else
       {

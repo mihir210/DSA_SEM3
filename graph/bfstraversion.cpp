@@ -30,23 +30,23 @@ void Graph::BFS(int s)
 	vector<bool> visited;
 	visited.resize(V,false);
 
-	list<int> queue;
+	queue<int> q;
 
 	visited[s] = true;
-	queue.push_back(s);
+	q.push(s);
 
-	while(!queue.empty())
+	while(!q.empty())
 	{
-		s = queue.front();
+		s = q.front();
 		cout << s << " ";
-		queue.pop_front();
+		q.pop();
       
 		for (auto adjecent: adj[s])
 		{
 			if (!visited[adjecent])
 			{
 				visited[adjecent] = true;
-				queue.push_back(adjecent);
+				q.push(adjecent);
 			}
 		}
 	}
@@ -54,17 +54,22 @@ void Graph::BFS(int s)
 
 int main()
 {
-Graph g(4);
-    g.addEdge(0, 1);
-    g.addEdge(0, 2);
-    g.addEdge(1, 2);
-    g.addEdge(2, 0);
-    g.addEdge(2, 3);
-    g.addEdge(3, 3);
- 
-    cout << "Following is Breadth First Traversal "
-         << "(starting from vertex 2) \n";
-    g.BFS(2);
+Graph b(5);
+   b.addEdge(0,1);
+    b.addEdge(1,0);
+    b.addEdge(1,2);
+    b.addEdge(1,3);
+    b.addEdge(2,1);
+    b.addEdge(3,1);
+    b.addEdge(2,4);
+    b.addEdge(4,2);
+    b.addEdge(3,4);
+    b.addEdge(4,3);
+    b.addEdge(4,5);
+    b.addEdge(5,4);
+    b.addEdge(4,6);
+    b.addEdge(6,4);
+    b.BFS(1);
 
 
 	return 0;
